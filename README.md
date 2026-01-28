@@ -37,9 +37,11 @@ The project focuses on converting raw text into a cleaned and structured format 
 ## 🧪 Sample Code Explanation
 
 ### Importing Required Libraries
-```python
+
 import nltk
+
 from nltk.stem import WordNetLemmatizer
+
 from nltk.corpus import stopwords
 
 ## Input Text
@@ -49,13 +51,19 @@ paragraph = """AI, machine learning and deep learning are common terms in enterp
 sentence = nltk.sent_tokenize(paragraph)
 
 ## Lemmatization & Stopword Removal
+
 stemmer = WordNetLemmatizer()
 
 for i in range(len(sentence)):
+
     words = nltk.word_tokenize(sentence[i])
+    
     words = [stemmer.lemmatize(word) for word in words 
+    
              if word not in set(stopwords.words('english'))]
+             
     sentence[i] = ' '.join(words)
+    
 
 ## 📈 Output
 
